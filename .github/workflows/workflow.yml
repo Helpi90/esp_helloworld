@@ -1,0 +1,17 @@
+name: Build
+
+on: push
+jobs:
+  idf-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: IDF
+      uses: espressif/idf
+    - name: Build
+      run: |
+        idf.py build
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: build-artifacts
+        path: build/
