@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: IDF
-      uses: espressif/idf
+      uses: espressif/idf@master
     - name: Build
       run: |
         idf.py build
